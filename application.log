@@ -1,0 +1,46 @@
+2020-05-25 18:45:02.233  INFO 18648 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:1113
+2020-05-25 18:45:02.308  INFO 18648 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Connect Timeout Exception on Url - http://localhost:1113. Will be trying the next url if available
+2020-05-25 18:45:02.308  WARN 18648 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Could not locate PropertySource: I/O error on GET request for "http://localhost:1113/exp-mgr/default": Connection refused; nested exception is java.net.ConnectException: Connection refused
+2020-05-25 18:45:02.309  INFO 18648 --- [restartedMain] c.r.p.expmgr.starter.AppStarter  : No active profile set, falling back to default profiles: default
+2020-05-25 18:45:02.755  INFO 18648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-25 18:45:02.794  INFO 18648 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 3 JPA repository interfaces.
+2020-05-25 18:45:03.026  INFO 18648 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=22b391f5-1b0a-3204-b3b6-6514a403e402
+2020-05-25 18:45:03.152  INFO 18648 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$dc5f8656] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-25 18:45:03.369  WARN 18648 --- [restartedMain] io.undertow.websockets.jsr               : UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2020-05-25 18:45:03.383  INFO 18648 --- [restartedMain] io.undertow.servlet                      : Initializing Spring embedded WebApplicationContext
+2020-05-25 18:45:03.384  INFO 18648 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1060 ms
+2020-05-25 18:45:03.570  INFO 18648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-25 18:45:03.656  INFO 18648 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-25 18:45:04.347  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM expmgr1.databasechangeloglock
+2020-05-25 18:45:04.351  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM expmgr1.databasechangeloglock
+2020-05-25 18:45:04.352  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT LOCKED FROM expmgr1.databasechangeloglock WHERE ID=1
+2020-05-25 18:45:04.360  INFO 18648 --- [restartedMain] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2020-05-25 18:45:05.221  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM expmgr1.databasechangelog WHERE MD5SUM IS NOT NULL LIMIT 1
+2020-05-25 18:45:05.222  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM expmgr1.databasechangelog
+2020-05-25 18:45:05.222  INFO 18648 --- [restartedMain] l.c.StandardChangeLogHistoryService      : Reading from expmgr1.databasechangelog
+2020-05-25 18:45:05.223  INFO 18648 --- [restartedMain] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM expmgr1.databasechangelog ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2020-05-25 18:45:05.233  INFO 18648 --- [restartedMain] l.lockservice.StandardLockService        : Successfully released change log lock
+2020-05-25 18:45:05.291  INFO 18648 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-25 18:45:05.346  INFO 18648 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-25 18:45:05.443  INFO 18648 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-25 18:45:05.518  INFO 18648 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-25 18:45:05.905  INFO 18648 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-25 18:45:05.909  INFO 18648 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 18:45:06.229  WARN 18648 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-25 18:45:06.290  INFO 18648 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2020-05-25 18:45:06.331  INFO 18648 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-05-25 18:45:06.383  INFO 18648 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-25 18:45:06.396  INFO 18648 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-05-25 18:45:06.517  INFO 18648 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-05-25 18:45:06.528  INFO 18648 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-05-25 18:45:06.542  INFO 18648 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-05-25 18:45:06.677  INFO 18648 --- [restartedMain] io.undertow                              : starting server: Undertow - 2.0.30.Final
+2020-05-25 18:45:06.683  INFO 18648 --- [restartedMain] org.xnio                                 : XNIO version 3.3.8.Final
+2020-05-25 18:45:06.689  INFO 18648 --- [restartedMain] org.xnio.nio                             : XNIO NIO Implementation Version 3.3.8.Final
+2020-05-25 18:45:06.747  INFO 18648 --- [restartedMain] o.s.b.w.e.u.UndertowServletWebServer     : Undertow started on port(s) 1111 (http) with context path ''
+2020-05-25 18:45:06.749  INFO 18648 --- [restartedMain] c.r.p.expmgr.starter.AppStarter  : Started AppStarter in 5.349 seconds (JVM running for 5.745)
+2020-05-25 19:00:25.553  INFO 18648 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-25 19:00:25.555  INFO 18648 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-25 19:00:25.557  INFO 18648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-25 19:00:25.559  INFO 18648 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-25 19:00:25.565  INFO 18648 --- [SpringContextShutdownHook] io.undertow                              : stopping server: Undertow - 2.0.30.Final

@@ -1,0 +1,27 @@
+###1.SignUp###
+{
+  "signIn": {
+    "encryptionKey": "string",
+    "password": "string",
+    "userName": "string"
+  },
+  "user": {
+    "comment": "string",
+    "emailId": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "type": "string"
+  }
+}
+
+###ADD expense###
+
+{
+  "expenseCategory": "MORTGAGE_OR_RENT",
+  "expenseName": "MORTGAGE_OR_RENT_RENT",
+  "openingBalance": 0,
+  "transactionAmount": 18000,
+  "transactionDate": "2020-05-10T13:57:29.578Z",
+  "transactionSource": "NET_BANKING",
+  "transactionType": "EXPENSE"
+}

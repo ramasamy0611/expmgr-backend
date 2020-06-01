@@ -1,0 +1,137 @@
+databaseChangeLog:
+  - changeSet:
+      id: expmgr-1
+      author: molair
+      changes:
+        - createTable:
+            tableName: exp_mgr_user
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creationdate
+                  type: datetime(6)
+                  constraints:
+                    nullable: fasle
+              - column:
+                  name: modifieddate
+                  type: datetime(6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+        - createTable:
+            tableName: exp_mgr_expense
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: transaction_date
+                  type: datetime(6)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: opening_balance
+                  type: NUMERIC(18, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expense_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expense_category
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_type
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_source
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_amount
+                  type: NUMERIC(18, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: closing_balance
+                  type: NUMERIC(18, 2)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: exp_mgr_signin
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: encryption_key
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            columnNames: first_name, last_name, email
+            constraintName: UNIQUE_USER
+            schemaName: expmgr1
+            tableName: exp_mgr_user
+            validate: true
+        - addUniqueConstraint:
+            columnNames: user_name
+            constraintName: UNIQUE_USER_NAME
+            schemaName: expmgr1
+            tableName: exp_mgr_signin
+            validate: true
