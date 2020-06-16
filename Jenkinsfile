@@ -1,7 +1,7 @@
 node {
-  stage ('Checkout') {
+  stage ('checkout') {
     svn 'https://svn.mycorp/trunk/'
-    stage 'Build'
+    stage 'build'
     sh 'make all'
     stage 'Test'
     sh 'make test'
