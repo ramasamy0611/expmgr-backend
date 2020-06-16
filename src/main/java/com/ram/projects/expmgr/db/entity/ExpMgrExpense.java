@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public class ExpMgrExpense {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long Id;
+  private Long id;
 
   @Column(name = "transaction_date")
   private Timestamp transactionDate;
@@ -44,11 +44,11 @@ public class ExpMgrExpense {
   private Double closingBalance;
 
   public Long getId() {
-    return Id;
+    return id;
   }
 
   public void setId(Long id) {
-    Id = id;
+    this.id = id;
   }
 
   public Timestamp getTransactionDate() {
@@ -119,7 +119,7 @@ public class ExpMgrExpense {
   public String toString() {
     return "ExpMgrExpense{"
         + "Id="
-        + Id
+        + id
         + ", transactionDate="
         + transactionDate
         + ", openingBalance="

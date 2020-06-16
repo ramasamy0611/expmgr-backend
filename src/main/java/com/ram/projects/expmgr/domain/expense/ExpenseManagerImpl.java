@@ -10,7 +10,6 @@ import com.ram.projects.expmgr.exception.ExpenseNotFoundException;
 import com.ram.projects.expmgr.rest.process.rest.RestProcessorUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -30,7 +29,6 @@ public class ExpenseManagerImpl implements IExpenseManager {
   private ExpenseRepository expenseRepository;
   private Executor executor = RestProcessorUtil.getExecutor();
 
-  @CacheEvict(cacheNames = "expenseall-cache")
   @Override
   public CompletableFuture<Long> addExpense(ExpMgrExpense expMgrExpenseToBoAdded) {
     LOG.debug(LOG_HANDLE + "Expense data to be added :{}", expMgrExpenseToBoAdded);
@@ -43,7 +41,7 @@ public class ExpenseManagerImpl implements IExpenseManager {
     this.expenseRepository = expenseRepository;
   }
 
-  @CachePut(cacheNames = "expenseall-cache")
+//  @CachePut(cacheNames = "expenseall-cache", key = "#expMgrExpense.transactionDate")
   @Override
   public CompletableFuture<ExpMgrExpense> addGetExpense(ExpMgrExpense expMgrExpense) {
     LOG.debug(LOG_HANDLE + "Expense data to be added :{}", expMgrExpense);
@@ -73,7 +71,7 @@ public class ExpenseManagerImpl implements IExpenseManager {
     return CompletableFuture.supplyAsync(() -> expenseRepository.getOne(expenseId), executor);
   }
 
-  @Cacheable(cacheNames = "expenseall-cache")
+//  @Cacheable(cacheNames = "expenseall-cache")
   @Override
   public CompletableFuture<List<ExpMgrExpense>> getAllExpenses() {
     LOG.debug("Fetching from DB!");
