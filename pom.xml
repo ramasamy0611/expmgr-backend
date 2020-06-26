@@ -142,7 +142,28 @@
             <artifactId>spring-boot-starter-cache</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
-
+        <!-- Required only when you are using JAX-RS Client -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>2.27</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <!-- if your container implements Servlet API older than 3.0, use 'jersey-container-servlet-core' -->
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>2.27</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.27</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>2.25.1</version>
+        </dependency>
     </dependencies>
 
     <!-- Package as an executable jar -->
@@ -154,7 +175,7 @@
                 <version>${spring.boot.version}</version>
                 <configuration>
                     <jvmArguments>
-                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5006
+                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5007
                     </jvmArguments>
                 </configuration>
             </plugin>

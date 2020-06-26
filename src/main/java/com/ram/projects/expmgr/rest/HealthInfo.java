@@ -26,7 +26,7 @@ public class HealthInfo {
     public ResponseEntity ping(@PathVariable("pong") String pong) {
         LOGGER.debug("ping" + pong);
         LOGGER.error("Message property from cloud :{}", propertyConfig.getMessage());
-        pong = "Message property from cloud :{}" + propertyConfig.getMessage();
+        pong.concat("Message property from cloud :{}" + propertyConfig.getMessage());
         return ResponseEntity
                 .ok()
                 .body(pong);
